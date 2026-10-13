@@ -1,5 +1,3 @@
-import { title } from "process"
-
 
 const BlogForm = () => {
   
@@ -11,7 +9,7 @@ const BlogForm = () => {
           <input
             id='title-input'
             type="text"
-            value={title}
+            defaultValue=""
             placeholder="Enter blog title"
           />
         </label>
