@@ -1,4 +1,4 @@
-const notes = [
+const blogs = [
   { id: 1, content: "next.js utilizes React Server Components", important: true },
   { id: 2, content: "next.js is built on top of React", important: true },
   {
@@ -8,18 +8,18 @@ const notes = [
   },
 ]
 
-const Notes = () => {
+const Blogs = () => {
   return (
     <div>
-      <h2>Notes</h2>
+      <h2>Blogs</h2>
       <ul>
-        {notes.map(note => (
-          <li key={note.id}>
-            {note.content} {note.important && <strong>(important)</strong>}
+        {blogs.map(blog => (
+          <li key={blog.id}>
+            {blog.content} {blog.important && <strong>(important)</strong>}
           </li>
         ))}
       </ul>
     </div>
   )
 }
-export default Notes
+export default Blogs
