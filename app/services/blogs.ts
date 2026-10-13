@@ -21,3 +21,5 @@ const blogs = [
     likes: 12
   }
 ];
+
+let nextId = 4;
