@@ -23,3 +23,7 @@ const blogs = [
 ];
 
 let nextId = 4;
+
+export const getAllBlogs = () => {
+  return blogs;
+}
