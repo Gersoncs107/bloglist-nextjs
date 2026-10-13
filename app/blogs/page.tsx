@@ -30,6 +30,7 @@ const Blogs = () => {
         {blogs.map(blog => (
           <li key={blog.id}>
             <h3>{blog.title}</h3>
+            <p>ID: {blog.id}</p>
             <p>by {blog.author}</p>
             <p>Url: {blog.url}</p>
             <p>likes: {blog.likes}</p>
