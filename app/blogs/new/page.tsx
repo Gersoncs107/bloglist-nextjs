@@ -1,28 +1,10 @@
-import { useState } from 'react'
+import { title } from "process"
 
-const BlogForm = ({
-  handleSubmit,
-}: {
-  handleSubmit: (blog: { title: string; author: string; url: string }) => void
-}) => {
-  const [title, setTitle] = useState('')
-  const [author, setAuthor] = useState('')
-  const [url, setUrl] = useState('')
 
-  const onSubmit = (e: { preventDefault: () => void; }) => {
-    e.preventDefault()
-    handleSubmit({
-      title,
-      author,
-      url
-    })
-    setTitle('')
-    setAuthor('')
-    setUrl('')
-  }
-
+const BlogForm = () => {
+  
   return (
-    <form onSubmit={onSubmit}>
+    <form>
       <div>
         <label>
           Title:
@@ -30,7 +12,6 @@ const BlogForm = ({
             id='title-input'
             type="text"
             value={title}
-            onChange={({ target }) => setTitle(target.value)}
             placeholder="Enter blog title"
           />
         </label>
@@ -42,8 +23,7 @@ const BlogForm = ({
           <input
             id='author-input'
             type="text"
-            value={author}
-            onChange={({ target }) => setAuthor(target.value)}
+            defaultValue=""
             placeholder="Enter author name"
           />
         </label>
@@ -55,8 +35,7 @@ const BlogForm = ({
           <input
             id='url-input'
             type="url"
-            value={url}
-            onChange={({ target }) => setUrl(target.value)}
+            defaultValue=""
             placeholder="https://example.com"
           />
         </label>
