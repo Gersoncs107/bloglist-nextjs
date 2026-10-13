@@ -72,7 +72,7 @@ const Blog = ({ blog, updateBlog, deleteBlog, user }: BlogProps) => {
             <button id="like-button" style={{ marginLeft: '10px' }} onClick={handleLike}>like</button>
           </div>
           <div style={{ marginTop: '8px' }}>
-            <span style={labelStyle}>Added by:</span> {blog.user?.name || 'unknown'}
+            <span style={labelStyle}>Added by:</span> {typeof blog.user === 'object' && blog.user !== null ? blog.user.name || 'unknown' : 'unknown'}
           </div>
           {canRemove && (
             <div style={{ marginTop: '12px' }}>
