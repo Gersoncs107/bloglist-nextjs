@@ -1,8 +1,10 @@
+import { createBlog } from "@/app/actions/blogs"
+
 
 const BlogForm = () => {
   
   return (
-    <form>
+    <form action={createBlog}>
       <div>
         <label>
           Title:
