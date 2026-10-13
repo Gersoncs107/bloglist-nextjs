@@ -27,3 +27,9 @@ let nextId = 4;
 export const getAllBlogs = () => {
   return blogs;
 }
+
+export const addBlog = (blog: { title: string; author: string; url: string; likes: number }) => {
+  const newBlog = { ...blog, id: nextId++ };
+  blogs.push(newBlog);
+  return newBlog;
+}
