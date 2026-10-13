@@ -31,9 +31,7 @@ const Blogs = () => {
           <li key={blog.id}>
             <h3>{blog.title}</h3>
             <p>by {blog.author}</p>
-            <a href={blog.url} target="_blank" rel="noopener noreferrer">
-              Read more
-            </a>
+            <p>Url: {blog.url}</p>
             <p>likes: {blog.likes}</p>
           </li>
         ))}
