@@ -1,4 +1,3 @@
-const Home = () => {
-  return <div>hello next.js</div>
+const Blog = () => {
+  
 }
-export default Home
