@@ -1,7 +1,5 @@
 import { createBlog } from "@/app/actions/blogs";
 
-export const dynamic = "force-dynamic";
-
 const NewBlog = () => {
   return (
     <form action={createBlog}>
