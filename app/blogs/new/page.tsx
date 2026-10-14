@@ -1,7 +1,7 @@
-import { createBlog } from "@/app/actions/blogs"
+import { createBlog } from "@/app/actions/blogs";
 
 
-const BlogForm = () => {
+const NewBlog = () => {
   
   return (
     <form action={createBlog}>
@@ -46,4 +46,4 @@ const BlogForm = () => {
   )
 }
 
-export default BlogForm
+export default NewBlog
