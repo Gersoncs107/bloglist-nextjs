@@ -11,7 +11,6 @@ const NewBlog = () => {
           <input
             id='title-input'
             type="text"
-            defaultValue=""
             placeholder="Enter blog title"
           />
         </label>
@@ -23,7 +22,6 @@ const NewBlog = () => {
           <input
             id='author-input'
             type="text"
-            defaultValue=""
             placeholder="Enter author name"
           />
         </label>
@@ -35,7 +33,6 @@ const NewBlog = () => {
           <input
             id='url-input'
             type="url"
-            defaultValue=""
             placeholder="https://example.com"
           />
         </label>
