@@ -7,11 +7,8 @@ export const createBlog = async (formData: FormData) => {
   const title = formData.get("title") as string;
   const author = formData.get("author") as string;
   const url = formData.get("url") as string;
-  const likes = formData.get("likes") as string;
-
-  await addBlog({
-      title, author, url,
-      likes: parseInt(likes) || 0
-  });
+  const likes = formData.get("likes") as unknown as number;
+  
+  addBlog({ title, author, url, likes});
   redirect("/blogs");
 }
