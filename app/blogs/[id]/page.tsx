@@ -20,3 +20,5 @@ const BlogPage = async ({ params }: { params: { id: string } }) => {
     </div>
   );
 };
+
+export default BlogPage;
