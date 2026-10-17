@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import {getAllBlogs} from '@/app/services/blogs'
 
 const Blogs = () => {
