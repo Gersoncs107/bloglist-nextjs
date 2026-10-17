@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { getBlogById } from "@/app/services/blogs";
 
-const BlogPage = ({ params }: { params: { id: string } }) => {
+const BlogPage = async ({ params }: { params: { id: string } }) => {
   const blogId = parseInt(params.id, 10);
   const blog = getBlogById(blogId);
 
