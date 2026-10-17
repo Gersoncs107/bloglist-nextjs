@@ -16,9 +16,7 @@ const BlogPage = async ({ params }: { params: { id: string } }) => {
       <h1>{blog.title}</h1>
       <p>Author: {blog.author}</p>
       <p>Likes: {blog.likes}</p>
-      <a href={blog.url} target="_blank" rel="noopener noreferrer">
-        Read more
-      </a>
+      <p>Url: {blog.url}</p>
     </div>
   );
 };
