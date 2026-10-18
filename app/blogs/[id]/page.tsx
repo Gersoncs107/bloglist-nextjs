@@ -17,6 +17,12 @@ const BlogPage = async ({ params }: { params: { id: string } }) => {
       <h1>{blog.title}</h1>
       <p>Author: {blog.author}</p>
       <p>Likes: {blog.likes}</p>
+      <form action={addBlogLikes}>
+        <input type="hidden" name="id" value={blog.id} />
+        <button type="submit">
+          Add Like
+        </button>
+      </form>
       <p>Url: {blog.url}</p>
     </div>
   );
