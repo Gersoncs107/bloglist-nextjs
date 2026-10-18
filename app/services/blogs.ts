@@ -35,3 +35,10 @@ export const addBlog = (blog: { title: string; author: string; url: string; like
 export const getBlogById = (id: number) => {
   return blogs.find(blog => blog.id === id);
 }
+
+export const updateLikes = (id: number) => {
+  const blog = blogs.find(blog => blog.id === id);
+  if (blog) {
+    blog.likes += 1;
+  }
+}
