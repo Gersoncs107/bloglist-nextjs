@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { getBlogById } from "@/app/services/blogs";
+import { addBlogLikes } from "@/app/actions/blogs";
 
 export const instant = false
 
