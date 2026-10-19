@@ -3,6 +3,7 @@ import {getAllBlogs} from '@/app/services/blogs'
 
 const Blogs = () => {
   const blogs = getAllBlogs();
+  const mostLikedBlog = blogs.reduce((prev, current) => (prev.likes > current.likes) ? prev : current, blogs[0]);
 
   return (
     <div>
