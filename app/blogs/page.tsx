@@ -9,7 +9,7 @@ const Blogs = () => {
     <div>
       <h2>Blogs</h2>
       <ul>
-        {blogs.map(blog => (
+        {sortedBlogs.map(blog => (
           <li key={blog.id}>
             <h3>
               <Link href={`/blogs/${blog.id}`}>
