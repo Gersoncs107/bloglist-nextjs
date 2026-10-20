@@ -2,6 +2,8 @@ import Link from 'next/link';
 import Form from 'next/form';
 import { getAllBlogs } from '@/app/services/blogs'
 
+export const instant = false
+
 const Blogs = async ({
   searchParams,
 }: {
