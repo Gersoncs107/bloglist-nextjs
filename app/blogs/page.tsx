@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Form from 'next/form';
 import {getAllBlogs} from '@/app/services/blogs'
 
 const Blogs = () => {
