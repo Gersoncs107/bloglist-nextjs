@@ -13,7 +13,7 @@ const Blogs = async ({
   const filter = (Array.isArray(params.filter) ? params.filter[0] : params.filter) ?? "";
   const term = filter.trim().toLowerCase();
 
-  const blogs = getAllBlogs();
+  const blogs = await getAllBlogs();
   const visibleBlogs = [...blogs]
     .filter(blog => blog.title.toLowerCase().includes(term))
     .sort((a, b) => b.likes - a.likes);
