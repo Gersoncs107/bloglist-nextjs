@@ -20,5 +20,4 @@ export const addLikes = async (id: number) => {
   if (blog) {
     await db.update(blogs).set({ likes: blog.likes + 1 }).where(eq(blogs.id, id));
   }
-  }
 }
