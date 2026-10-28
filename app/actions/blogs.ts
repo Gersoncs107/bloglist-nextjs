@@ -9,7 +9,7 @@ export const createBlog = async (formData: FormData) => {
   const author = formData.get("author") as string;
   const url = formData.get("url") as string;
 
-  addBlog({ title, author, url, likes: 0 });
+  await addBlog({ title, author, url, likes: 0 });
 
   revalidatePath("/blogs");
   redirect("/blogs");
