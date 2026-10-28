@@ -1,3 +1,6 @@
+import { eq } from "drizzle-orm"
+import { db } from "../../db"
+
 const blogs = [
   {
     id: 1,
