@@ -8,7 +8,7 @@ export const getAllBlogs = async () => {
 }
 
 export const addBlog = async (blog: { title: string; author: string; url: string; likes: number }) => {
-  await db.insert(blogs).values({ ...blog, id: Math.floor(Math.random() * 1000000) });
+  await db.insert(blogs).values({ ...blog });
 }
 
 export const getBlogById = async (id: number) => {
