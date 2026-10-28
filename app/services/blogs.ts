@@ -4,7 +4,7 @@ import { blogs } from "../../db/schema"
 
 
 export const getAllBlogs = () => {
-  return blogs;
+  return db.query.blogs.findMany()
 }
 
 export const addBlog = (blog: { title: string; author: string; url: string; likes: number }) => {
