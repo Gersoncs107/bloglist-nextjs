@@ -12,7 +12,11 @@ export const addBlog = async (blog: { title: string; author: string; url: string
     orderBy: sql`RANDOM()`,
   })
 
-  await db.insert(blogs).values({ ...blog });
+  if (!user) {
+    throw new Error("Cannot add a blog without an existing user")
+  }
+
+  await db.insert(blogs).values({ ...blog, userId: user.id });
 }
 
 export const getBlogById = async (id: number) => {
