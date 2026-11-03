@@ -1,6 +1,8 @@
 import Link from "next/link"
 import { getUsers } from "../services/users"
 
+export const instant = false
+
 const Users = async () => {
   const users = await getUsers()
 
