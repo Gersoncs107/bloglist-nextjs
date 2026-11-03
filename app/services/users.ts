@@ -1,6 +1,13 @@
 import { db } from "../../db"
+import { eq } from "drizzle-orm"
 import { users } from "../../db/schema"
 
 export const getUsers = async () => {
   return db.query.users.findMany()
+}
+
+export const getUserById = async (id: number) => {
+  return db.query.users.findFirst({
+    where: (users) => eq(users.id, id)
+  })
 }
