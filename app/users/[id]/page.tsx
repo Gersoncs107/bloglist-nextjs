@@ -16,13 +16,14 @@ const UserPage = async ({ params }: { params: Promise<{ id: string }> }) => {
       <p>Username: {user.username}</p>
       <h3>Blogs</h3>
       <ul>
-        {user.notes.map((note) => (
-          <li key={note.id}>
-            <Link href={`/notes/${note.id}`}>{note.content}</Link>
-            {note.important && <strong> (important)</strong>}
+        {user.blogs.map((blog) => (
+          <li key={blog.id}>
+            <Link href={`/blogs/${blog.id}`}>{blog.title}</Link>
           </li>
         ))}
       </ul>
     </div>
   )
 }
+
+export default UserPage
