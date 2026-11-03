@@ -17,3 +17,5 @@ const Users = async () => {
     </div>
   )
 }
+
+export default Users
