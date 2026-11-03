@@ -8,6 +8,6 @@ export const getUsers = async () => {
 
 export const getUserById = async (id: number) => {
   return db.query.users.findFirst({
-    where: (users) => eq(users.id, id)
+    where: eq(users.id, id)
   })
 }
