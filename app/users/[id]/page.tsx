@@ -14,7 +14,7 @@ const UserPage = async ({ params }: { params: Promise<{ id: string }> }) => {
     <div>
       <h2>{user.name}</h2>
       <p>Username: {user.username}</p>
-      <h3>Notes</h3>
+      <h3>Blogs</h3>
       <ul>
         {user.notes.map((note) => (
           <li key={note.id}>
