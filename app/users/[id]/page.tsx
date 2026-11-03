@@ -1,10 +1,10 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { getUserById } from "../../services/users"
+import { getUserWithBlogs } from "../../services/users"
 
 const UserPage = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params
-  const user = await getUserById(Number(id))
+  const user = await getUserWithBlogs(Number(id))
 
   if (!user) {
     notFound()
