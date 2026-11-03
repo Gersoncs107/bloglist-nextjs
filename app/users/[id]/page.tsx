@@ -4,9 +4,9 @@ import { getUserWithBlogs } from "../../services/users"
 
 export const instant = false
 
-const UserPage = async ({ params }: { params: Promise<{ id: string }> }) => {
-  const { id } = await params
-  const user = await getUserWithBlogs(Number(id))
+const UserPage = async ({ params }: { params: Promise<{ username: string }> }) => {
+  const { username } = await params
+  const user = await getUserWithBlogs(username)
 
   if (!user) {
     notFound()
@@ -27,4 +27,5 @@ const UserPage = async ({ params }: { params: Promise<{ id: string }> }) => {
     </div>
   )
 }
+
 export default UserPage
