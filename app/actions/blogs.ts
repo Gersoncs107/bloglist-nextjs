@@ -3,6 +3,7 @@
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { addBlog, addLikes } from "../services/blogs";
+import { auth } from "@/auth";
 
 export const createBlog = async (formData: FormData) => {
   const session = await auth()
