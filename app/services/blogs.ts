@@ -1,6 +1,7 @@
 import { eq, sql } from "drizzle-orm"
 import { db } from "../../db"
 import { blogs } from "../../db/schema"
+import { getCurrentUser } from "./session"
 
 
 export const getAllBlogs = async () => {
