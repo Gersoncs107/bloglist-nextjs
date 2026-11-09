@@ -9,12 +9,9 @@ export const getAllBlogs = async () => {
 }
 
 export const addBlog = async (blog: { title: string; author: string; url: string; likes: number }) => {
-  const user = await db.query.users.findFirst({
-    orderBy: sql`RANDOM()`,
-  })
-
+   const user = await getCurrentUser()
   if (!user) {
-    throw new Error("Cannot add a blog without an existing user")
+    throw new Error("Not logged in")
   }
 
   await db.insert(blogs).values({ ...blog, userId: user.id });
