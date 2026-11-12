@@ -7,7 +7,9 @@ import { auth } from "@/auth";
 
 export const createBlog = async (
   prevState: {error: string},
-  formData: FormData) => {
+  formData: FormData
+  ) => {
+    
   const session = await auth()
   if (!session) {
     redirect("/login")
