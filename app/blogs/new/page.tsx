@@ -37,7 +37,7 @@ const NewBlog = () => {
             name="url"
             type="url"
             placeholder="https://example.com"
-            required
+            required minLength={5}
           />
         </label>
       </div>
