@@ -1,3 +1,5 @@
+"use client";
+
 import { createBlog } from "@/app/actions/blogs";
 
 const NewBlog = () => {
