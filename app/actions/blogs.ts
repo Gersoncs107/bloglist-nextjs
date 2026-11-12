@@ -5,7 +5,9 @@ import { revalidatePath } from "next/cache";
 import { addBlog, addLikes } from "../services/blogs";
 import { auth } from "@/auth";
 
-export const createBlog = async (formData: FormData) => {
+export const createBlog = async (
+  prevState: 
+  formData: FormData) => {
   const session = await auth()
   if (!session) {
     redirect("/login")
