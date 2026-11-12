@@ -20,7 +20,12 @@ export const createBlog = async (
   if (!title || title.length < 5) {
     return {error: "Title must be at least 5 characters long."};
   }
+
   const author = formData.get("author") as string;
+  if (!author || author.length < 5) {
+    return {error: "Author must be at least 5 characters long."};
+  }
+  
   const url = formData.get("url") as string;
 
   await addBlog({ title, author, url, likes: 0 });
