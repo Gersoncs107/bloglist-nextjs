@@ -48,6 +48,7 @@ const NewBlog = () => {
       </div>
 
       <button type="submit">Create</button>
+      {state.error && <p style={{ color: "red" }}>{state.error}</p>}
     </form>
   )
 }
