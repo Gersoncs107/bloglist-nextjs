@@ -11,7 +11,7 @@ const NewBlog = () => {
             name="title"
             type="text"
             placeholder="Enter blog title"
-            required
+            required minLength={5}
           />
         </label>
       </div>
