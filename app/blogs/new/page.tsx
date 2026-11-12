@@ -4,6 +4,8 @@ import { useActionState } from "react";
 import { createBlog } from "@/app/actions/blogs";
 
 const NewBlog = () => {
+  const [state, formAction] = useActionState(createNote, { error: "" })
+
   return (
     <form action={createBlog}>
       <div>
