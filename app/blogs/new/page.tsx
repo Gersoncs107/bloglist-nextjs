@@ -4,7 +4,12 @@ import { useActionState } from "react";
 import { createBlog } from "@/app/actions/blogs";
 
 const NewBlog = () => {
-  const [state, formAction] = useActionState(createBlog, { error: "" })
+  const [state, formAction] = useActionState(createBlog, {
+    error: "",
+    title: "",
+    author: "",
+    url: "",
+  })
 
   return (
     <form action={formAction}>
@@ -16,7 +21,9 @@ const NewBlog = () => {
             name="title"
             type="text"
             placeholder="Enter blog title"
-            required minLength={5}
+            defaultValue={state.title}
+            required
+            minLength={5}
           />
         </label>
       </div>
@@ -29,7 +36,9 @@ const NewBlog = () => {
             name="author"
             type="text"
             placeholder="Enter author name"
-            required minLength={5}
+            defaultValue={state.author}
+            required
+            minLength={5}
           />
         </label>
       </div>
@@ -42,7 +51,9 @@ const NewBlog = () => {
             name="url"
             type="url"
             placeholder="https://example.com"
-            required minLength={5}
+            defaultValue={state.url}
+            required
+            minLength={5}
           />
         </label>
       </div>
