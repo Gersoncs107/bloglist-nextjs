@@ -38,7 +38,7 @@ const NewBlog = () => {
             placeholder="Enter author name"
             defaultValue={state.author}
             required
-            // minLength={5}
+            minLength={5}
           />
         </label>
       </div>
