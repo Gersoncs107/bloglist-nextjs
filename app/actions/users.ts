@@ -4,8 +4,16 @@ import { redirect } from "next/navigation"
 import bcrypt from "bcryptjs"
 import { db } from "../../db"
 import { users } from "../../db/schema"
+import { auth } from "@/auth"
 
-export const registerUser = async (formData: FormData) => {
+export const registeruser = async (
+  prevState: { error: string },
+  formData: FormData,
+) => {
+  const session = await auth()
+  if (!session) {
+    redirect("/login")
+  }
   const username = (formData.get("username") as string)?.trim()
   const name = (formData.get("name") as string)?.trim()
   const password = formData.get("password") as string
