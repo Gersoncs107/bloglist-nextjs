@@ -23,7 +23,7 @@ const NewBlog = () => {
             placeholder="Enter blog title"
             defaultValue={state.title}
             required
-            // minLength={5}
+            minLength={5}
           />
         </label>
       </div>
