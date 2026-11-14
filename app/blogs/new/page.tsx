@@ -53,7 +53,7 @@ const NewBlog = () => {
             placeholder="https://example.com"
             defaultValue={state.url}
             required
-            // minLength={5}
+            minLength={5}
           />
         </label>
       </div>
