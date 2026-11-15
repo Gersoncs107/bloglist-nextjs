@@ -18,6 +18,8 @@ export const registeruser = async (
   const name = (formData.get("name") as string)?.trim()
   const password = formData.get("password") as string
 
+  if (!username || username.length ) {
+
   const passwordHash = await bcrypt.hash(password, 10)
 
   await db.insert(users).values({ username, name, passwordHash })
