@@ -26,3 +26,4 @@ export const registeruser = async (
 
   redirect("/login")
 }
+}
