@@ -5,19 +5,28 @@ import bcrypt from "bcryptjs"
 import { eq } from "drizzle-orm"
 import { db } from "../../db"
 import { users } from "../../db/schema"
-import { auth } from "@/auth"
 
 export const registerUser = async (
   prevState: { error: string },
   formData: FormData,
 ) => {
-  const session = await auth()
-  if (!session) {
-    redirect("/login")
-  }
   const username = (formData.get("username") as string)?.trim()
   const name = (formData.get("name") as string)?.trim()
   const password = formData.get("password") as string
+  const passwordConfirm = formData.get("passwordConfirm") as string
+
+  if (!username || username.length < 4) {
+    return { error: "Username must be at least 4 characters long" }
+  }
+
+  if (!password || password.length < 4) {
+    return { error: "Password must be at least 4 characters long" }
+  }
+
+  if (password !== passwordConfirm) {
+    return { error: "Passwords do not match" }
+  }
+
   const [existingUser] = await db
     .select()
     .from(users)
@@ -26,14 +35,6 @@ export const registerUser = async (
 
   if (existingUser) {
     return { error: "Username already exists" }
-  }
-
-  if (!username || username.length < 4) {
-    return { error: "Username must be at least 4 characters long" }
-  }
-
-  if (!password || password.length < 4) {
-    return { error: "Password must be at least 4 characters long" }
   }
 
   const passwordHash = await bcrypt.hash(password, 10)
