@@ -18,8 +18,8 @@ export const registeruser = async (
   const name = (formData.get("name") as string)?.trim()
   const password = formData.get("password") as string
 
-  if (!username || username.length < 3) {
-    return { error: "Username must be at least 3 characters long" }
+  if (!username || username.length < 4) {
+    return { error: "Username must be at least 4 characters long" }
   }
 
   if (!password || password.length < 6) {
