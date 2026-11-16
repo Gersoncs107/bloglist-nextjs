@@ -10,7 +10,7 @@ export default function RegisterPage() {
   return (
     <div>
       <h2>Register</h2>
-      <form action={registerUser}>
+      <form action={formAction}>
         <div>
           <label>
             Username
@@ -30,6 +30,7 @@ export default function RegisterPage() {
           </label>
         </div>
         <button type="submit">Register</button>
+        {state.error && <p style={{ color: "red" }}>{state.error}</p>}
       </form>
     </div>
   )
