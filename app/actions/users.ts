@@ -6,7 +6,7 @@ import { db } from "../../db"
 import { users } from "../../db/schema"
 import { auth } from "@/auth"
 
-export const registeruser = async (
+export const registerUser = async (
   prevState: { error: string },
   formData: FormData,
 ) => {
