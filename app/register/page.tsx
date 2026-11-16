@@ -23,17 +23,17 @@ export default function RegisterPage() {
             <input type="text" name="name" required minLength={4} />
           </label>
         </div>
-        <div>
+                <div>
           <label>
             Password
-            <input type="password" name="password" required />
+            <input type="password" name="password" required minLength={4} />
           </label>
         </div>
         <div>
           <label>
             Password Confirm
+            <input type="password" name="passwordConfirm" required minLength={4} />
           </label>
-          <input type="password" name="passwordConfirm" />
         </div>
         <button type="submit">Register</button>
         {state.error && <p style={{ color: "red" }}>{state.error}</p>}
