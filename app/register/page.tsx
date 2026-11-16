@@ -2,8 +2,11 @@
 
 import Link from "next/link"
 import { registerUser } from "../actions/users"
+import { useActionState } from "react"
 
 export default function RegisterPage() {
+  const [state, formAction] = useActionState(registerUser, { error: "" })
+
   return (
     <div>
       <h2>Register</h2>
