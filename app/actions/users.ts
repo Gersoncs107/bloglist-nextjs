@@ -22,8 +22,8 @@ export const registeruser = async (
     return { error: "Username must be at least 4 characters long" }
   }
 
-  if (!password || password.length < 6) {
-    return { error: "Password must be at least 6 characters long" }
+  if (!password || password.length < 4) {
+    return { error: "Password must be at least 4 characters long" }
   }
 
   const passwordHash = await bcrypt.hash(password, 10)
