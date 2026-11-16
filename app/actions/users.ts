@@ -18,12 +18,13 @@ export const registeruser = async (
   const name = (formData.get("name") as string)?.trim()
   const password = formData.get("password") as string
 
-  if (!username || username.length ) {
+  if (!username || username.length < 3) {
+    return { error: "Username must be at least 3 characters long" }
+  }
 
   const passwordHash = await bcrypt.hash(password, 10)
 
   await db.insert(users).values({ username, name, passwordHash })
 
   redirect("/login")
-}
 }
