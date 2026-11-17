@@ -32,7 +32,7 @@ export const createBlog = async (
   if (!author || author.length < 5) {
     return { ...values, error: "Author must be at least 5 characters long." }
   }
-  if (url.length < 5) {
+  if (!url || url.length < 5) {
     return { ...values, error: "URL must be at least 5 characters long." }
   }
 
