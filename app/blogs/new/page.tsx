@@ -1,13 +1,18 @@
 "use client";
 
-import { useActionState } from "react";
+import { useRouter } from "next/navigation";
+import { useActionState, useEffect } from "react";
 import { createBlog } from "@/app/actions/blogs";
+import { useNotification } from "@/app/components/NotificationContext";
 
 const NewBlog = () => {
   const [state, formAction] = useActionState(createBlog, {
     error: "",
     success: false,
   })
+
+  const { showNotification } = useNotification()
+  const router = useRouter()
 
   return (
     <form action={formAction}>
