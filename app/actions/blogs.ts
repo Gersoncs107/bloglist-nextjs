@@ -27,13 +27,17 @@ export const createBlog = async (
   const values = { title, author, url }
 
   if (!title || title.length < 5) {
-    return { ...values, error: "Title must be at least 5 characters long." }
+    return { 
+      ...values, 
+      error: "Title must be at least 5 characters long.",
+      success: false
+    }
   }
   if (!author || author.length < 5) {
-    return { ...values, error: "Author must be at least 5 characters long." }
+    return { ...values, error: "Author must be at least 5 characters long.", success: false }
   }
   if (!url || url.length < 5) {
-    return { ...values, error: "URL must be at least 5 characters long." }
+    return { ...values, error: "URL must be at least 5 characters long.", success: false }
   }
 
   await addBlog({ title, author, url, likes: 0 })
