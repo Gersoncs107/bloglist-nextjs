@@ -13,6 +13,13 @@ const NewBlog = () => {
 
   const { showNotification } = useNotification()
   const router = useRouter()
+  
+  useEffect(() => {
+    if (state.success) {
+      showNotification("Blog created successfully!", "success")
+      router.push("/blogs")
+    }
+  }, [state.success, showNotification, router])
 
   return (
     <form action={formAction}>
