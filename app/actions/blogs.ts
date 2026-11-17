@@ -13,9 +13,9 @@ export type CreateBlogState = {
 }
 
 export const createBlog = async (
-  prevState: CreateBlogState,
+  prevState: { error: string; success?: boolean },
   formData: FormData
-): Promise<CreateBlogState> => {
+)=> {
   const session = await auth()
   if (!session) {
     redirect("/login")
