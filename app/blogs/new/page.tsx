@@ -6,9 +6,7 @@ import { createBlog } from "@/app/actions/blogs";
 const NewBlog = () => {
   const [state, formAction] = useActionState(createBlog, {
     error: "",
-    title: "",
-    author: "",
-    url: "",
+    success: false,
   })
 
   return (
