@@ -26,7 +26,7 @@ export const createBlog = async (
   const url = (formData.get("url") as string) ?? ""
   const values = { title, author, url }
 
-  if (title.length < 5) {
+  if (!title || title.length < 5) {
     return { ...values, error: "Title must be at least 5 characters long." }
   }
   if (author.length < 5) {
