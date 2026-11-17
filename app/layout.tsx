@@ -9,11 +9,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+   <html lang="en">
       <body>
         <AuthSessionProvider>
-          <NavBar />
-          {children}
+          <NotificationProvider>
+            <NavBar />
+            <Notification />
+            {children}
+          </NotificationProvider>
         </AuthSessionProvider>
       </body>
     </html>
