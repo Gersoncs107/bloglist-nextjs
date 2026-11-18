@@ -24,7 +24,6 @@ export const createBlog = async (
   const title = (formData.get("title") as string) ?? ""
   const author = (formData.get("author") as string) ?? ""
   const url = (formData.get("url") as string) ?? ""
-  const values = { title, author, url }
 
   if (!title || title.length < 5) {
     return { 
