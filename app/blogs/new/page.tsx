@@ -9,11 +9,14 @@ const NewBlog = () => {
   const [state, formAction] = useActionState(createBlog, {
     error: "",
     success: false,
+    title: "",
+    author: "",
+    url: "",
   })
 
   const { showNotification } = useNotification()
   const router = useRouter()
-  
+
   useEffect(() => {
     if (state.success) {
       showNotification("Blog created successfully!", "success")
@@ -31,6 +34,7 @@ const NewBlog = () => {
             name="title"
             type="text"
             placeholder="Enter blog title"
+            defaultValue={state.title}
             required
             minLength={5}
           />
@@ -45,6 +49,7 @@ const NewBlog = () => {
             name="author"
             type="text"
             placeholder="Enter author name"
+            defaultValue={state.author}
             required
             minLength={5}
           />
@@ -59,6 +64,7 @@ const NewBlog = () => {
             name="url"
             type="url"
             placeholder="https://example.com"
+            defaultValue={state.url}
             required
             minLength={5}
           />
