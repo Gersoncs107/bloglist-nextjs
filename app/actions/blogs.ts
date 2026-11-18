@@ -1,7 +1,9 @@
-import { auth } from "@/auth"
+"use server"
+
 import { redirect } from "next/navigation"
-import { addBlog } from "../services/blogs"
 import { revalidatePath } from "next/cache"
+import { addBlog, addLikes } from "../services/blogs"
+import { auth } from "@/auth"
 
 export type CreateBlogState = {
   error: string
@@ -39,4 +41,11 @@ export const createBlog = async (
 
   revalidatePath("/blogs")
   return { ...values, success: true, error: "" }
+}
+
+export const addBlogLikes = async (formData: FormData) => {
+  const id = Number(formData.get("id"))
+  await addLikes(id)
+  revalidatePath(`/blogs/${id}`)
+  revalidatePath("/blogs")
 }
