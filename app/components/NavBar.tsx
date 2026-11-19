@@ -8,7 +8,7 @@ export default function NavBar() {
 
   return (
     <nav className="bg-gray-800 text-white px-6 py-3 flex items-center gap-4">
-       <Link href="/blogs">home</Link>
+       <Link href="/blogs" className="hover:text-gray-300">home</Link>
           {" | "}
           <Link href="/blogs">blogs</Link>
           {" | "}
