@@ -39,7 +39,9 @@ const Blogs = async ({
           {visibleBlogs.map(blog => (
             <li key={blog.id} className="border rounded p-3 hover:bg-gray-50">
               <h3>
-                <Link href={`/blogs/${blog.id}`}>
+                <Link href={`/blogs/${blog.id}`}
+                  className="text-blue-600 hover:underline"
+                >
                   {blog.title}
                 </Link>
               </h3>

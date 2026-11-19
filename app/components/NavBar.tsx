@@ -7,7 +7,7 @@ export default function NavBar() {
   const { data: session } = useSession()
 
   return (
-    <nav>
+    <nav className="bg-gray-800 text-white px-6 py-3 flex items-center gap-4">
        <Link href="/blogs">home</Link>
           {" | "}
           <Link href="/blogs">blogs</Link>
