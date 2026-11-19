@@ -35,7 +35,7 @@ const Blogs = async ({
       {visibleBlogs.length === 0 ? (
         <p>No blogs found.</p>
       ) : (
-        <ul>
+        <ul className="space-y-2">
           {visibleBlogs.map(blog => (
             <li key={blog.id}>
               <h3>
