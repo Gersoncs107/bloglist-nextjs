@@ -37,7 +37,7 @@ const Blogs = async ({
       ) : (
         <ul className="space-y-2">
           {visibleBlogs.map(blog => (
-            <li key={blog.id}>
+            <li key={blog.id} className="border rounded p-3 hover:bg-gray-50">
               <h3>
                 <Link href={`/blogs/${blog.id}`}>
                   {blog.title}
