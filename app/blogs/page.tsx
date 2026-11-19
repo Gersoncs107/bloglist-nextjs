@@ -20,7 +20,7 @@ const Blogs = async ({
 
   return (
     <div className="max-w-2xl mx-auto p-6">
-      <h2>Blogs</h2>
+      <h2 className="text-2xl font-bold mb-4">Blogs</h2>
 
       <Form action="/blogs">
         <input
