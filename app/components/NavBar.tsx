@@ -10,24 +10,24 @@ export default function NavBar() {
   return (
     <nav className="bg-gray-800 text-white px-6 py-3 flex items-center gap-4">
 
-       <NavLink href="/blogs" className="hover:text-gray-300">home</NavLink>
+       <NavLink href="/blogs">home</NavLink>
           {" | "}
-          <NavLink href="/blogs" className="hover:text-gray-300">blogs</NavLink>
+          <NavLink href="/blogs">blogs</NavLink>
           {" | "}
-          <NavLink href="/users" className="hover:text-gray-300">users</NavLink>
+          <NavLink href="/users">users</NavLink>
           {" | "}
       {session ? (
         <>
-          <NavLink href="/blogs/new" className="hover:text-gray-300">create new</NavLink>
+          <NavLink href="/blogs/new">create new</NavLink>
           {" | "}
           <em>{session.user?.name} logged in</em>{" "}
-          <button onClick={() => signOut()} className="hover:text-gray-300">logout</button>
+          <button onClick={() => signOut()}>logout</button>
         </>
       ) : (
         <>
-          <NavLink href="/login" className="hover:text-gray-300">login</NavLink>
+          <NavLink href="/login">login</NavLink>
           {" | "}
-          <NavLink href="/register" className="hover:text-gray-300">register</NavLink>
+          <NavLink href="/register">register</NavLink>
         </>
       )}
     </nav>
