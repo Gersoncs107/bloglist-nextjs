@@ -22,14 +22,20 @@ const Blogs = async ({
     <div className="max-w-2xl mx-auto p-6">
       <h2 className="text-2xl font-bold mb-4">Blogs</h2>
 
-      <Form action="/blogs">
+      <Form action="/blogs" className="mb-6 flex gap-2">
         <input
           name="filter"
           type="text"
           placeholder="Search by title"
           defaultValue={filter}
+          className="flex-1 rounded border border-gray-300 bg-white px-3 py-2 text-gray-900"
         />
-        <button type="submit">Search</button>
+        <button
+          type="submit"
+          className="cursor-pointer rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+        >
+          Search
+        </button>
       </Form>
 
       {visibleBlogs.length === 0 ? (
