@@ -19,6 +19,8 @@ export default function NavBar() {
         <>
           <NavLink href="/blogs/new">create new</NavLink>
           {" | "}
+          <NavLink href="/me">me</NavLink>
+          {" | "}
           <em>{session.user?.name} logged in</em>{" "}
           <button onClick={() => signOut()}>logout</button>
         </>
