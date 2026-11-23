@@ -5,6 +5,23 @@ import bcrypt from "bcryptjs"
 import { eq } from "drizzle-orm"
 import { db } from "../../db"
 import { users } from "../../db/schema"
+import { revalidatePath } from "next/cache"
+import { randomUUID } from "node:crypto"
+import { getCurrentUser } from "../services/session"
+
+export const generateToken = async () => {
+  const user = await getCurrentUser()
+  if (!user) {
+    redirect("/login")
+  }
+
+  await db
+    .update(users)
+    .set({ token: randomUUID() })
+    .where(eq(users.id, user.id))
+
+  revalidatePath("/me")
+}
 
 export const registerUser = async (
   prevState: { error: string },
