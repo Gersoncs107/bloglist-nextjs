@@ -6,9 +6,15 @@ export const getUsers = async () => {
   return db.query.users.findMany()
 }
 
-export const getUsersWithBlogs = async () => {
-  return db.query.users.findMany({
-    with: { blogs: true },
+export const getUserByToken = async (token: string) => {
+  return db.query.users.findFirst({
+    where: eq(users.token, token),
+    columns: { id: true, username: true, name: true },
+    with: {
+      blogs: {
+        columns: { author: true, title: true, url: true },
+      },
+    },
   })
 }
 
