@@ -52,6 +52,12 @@ const BlogPage = async ({ params }: { params: Promise<{ id: string }> }) => {
             >
               Add Like
             </button>
+            <button
+              type="submit"
+              className="cursor-pointer rounded bg-green-600 px-4 py-2 text-white hover:bg-green-700"
+            >
+              Add to Reading List
+            </button>
           </form>
         </div>
       </article>
