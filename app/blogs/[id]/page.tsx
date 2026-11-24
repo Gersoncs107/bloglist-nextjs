@@ -52,6 +52,8 @@ const BlogPage = async ({ params }: { params: Promise<{ id: string }> }) => {
             >
               Add Like
             </button>
+            <span className="mx-2">|</span>
+            <input type="hidden" name="id" value={blog.id} />
             <button
               type="submit"
               className="cursor-pointer rounded bg-green-600 px-4 py-2 text-white hover:bg-green-700"
