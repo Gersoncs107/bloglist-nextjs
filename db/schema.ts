@@ -18,6 +18,8 @@ export const blogs = pgTable("blogs", {
     userId: integer("user_id").notNull().references(() => users.id),
 })
 
+
+
 export const usersRelations = relations(users, ({ many }) => ({
   blogs: many(blogs),
 }))
