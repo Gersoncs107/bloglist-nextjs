@@ -49,3 +49,10 @@ export const addBlogLikes = async (formData: FormData) => {
   revalidatePath(`/blogs/${id}`)
   revalidatePath("/blogs")
 }
+
+export const addToReadingList = async (formData: FormData) => {
+  const id = Number(formData.get("id"))
+  // Implement the logic to add the blog to the reading list
+  revalidatePath(`/blogs/${id}`)
+  revalidatePath("/blogs")
+}
