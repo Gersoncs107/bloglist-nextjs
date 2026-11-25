@@ -43,6 +43,13 @@
       "when": 1795569084406,
       "tag": "0005_silent_jack_flag",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1795570833366,
+      "tag": "0006_omniscient_whistler",
+      "breakpoints": true
     }
   ]
 }
