@@ -20,8 +20,8 @@ export const blogs = pgTable("blogs", {
 
 export const readinglists = pgTable("readinglists", {
     id: serial("id").primaryKey(),
-    blogId: integer("blog_id").notNull().references(() => blogs.id),
     userId: integer("user_id").notNull().references(() => users.id),
+    blogId: integer("blog_id").notNull().references(() => blogs.id),
 })
 
 export const usersRelations = relations(users, ({ many }) => ({
