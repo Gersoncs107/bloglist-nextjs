@@ -40,10 +40,11 @@ const BlogPage = async ({ params }: { params: Promise<{ id: string }> }) => {
           )}
         </p>
 
-        <div className="mt-6 flex items-center gap-4">
+        <div className="mt-6 flex flex-wrap items-center gap-4">
           <span className="text-lg font-semibold">
             {blog.likes} {blog.likes === 1 ? "like" : "likes"}
           </span>
+
           <form action={addBlogLikes}>
             <input type="hidden" name="id" value={blog.id} />
             <button
@@ -52,7 +53,9 @@ const BlogPage = async ({ params }: { params: Promise<{ id: string }> }) => {
             >
               Add Like
             </button>
-            <span className="mx-2">|</span>
+          </form>
+
+          <form action={addToReadingList}>
             <input type="hidden" name="id" value={blog.id} />
             <button
               type="submit"
@@ -61,7 +64,7 @@ const BlogPage = async ({ params }: { params: Promise<{ id: string }> }) => {
               Add to Reading List
             </button>
           </form>
-        </div>
+      </div>
       </article>
     </div>
   )
