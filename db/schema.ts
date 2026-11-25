@@ -18,12 +18,19 @@ export const blogs = pgTable("blogs", {
     userId: integer("user_id").notNull().references(() => users.id),
 })
 
-export const readinglists = pgTable("readinglists", {
+export const readinglists = pgTable(
+  "readinglists",
+  {
     id: serial("id").primaryKey(),
     userId: integer("user_id").notNull().references(() => users.id),
     blogId: integer("blog_id").notNull().references(() => blogs.id),
     read: boolean("read").notNull().default(false),
-})
+  },
+  (table) => [
+    unique("readinglists_user_blog_unique").on(table.userId, table.blogId),
+  ],
+)
+
 
 export const usersRelations = relations(users, ({ many }) => ({
   blogs: many(blogs),
