@@ -31,7 +31,6 @@ export const readinglists = pgTable(
   ],
 )
 
-
 export const usersRelations = relations(users, ({ many }) => ({
   blogs: many(blogs),
   readinglists: many(readinglists),
@@ -41,5 +40,16 @@ export const blogsRelations = relations(blogs, ({ one }) => ({
   user: one(users, {
     fields: [blogs.userId],
     references: [users.id],
+  }),
+}))
+
+export const readinglistsRelations = relations(readinglists, ({ one }) => ({
+  user: one(users, {
+    fields: [readinglists.userId],
+    references: [users.id],
+  }),
+  blog: one(blogs, {
+    fields: [readinglists.blogId],
+    references: [blogs.id],
   }),
 }))
