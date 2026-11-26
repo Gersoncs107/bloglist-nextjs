@@ -26,7 +26,10 @@ const MePage = async () => {
         <hr className="my-8 border-gray-300" />
 
         <h3 className="text-2xl font-bold">Reading List</h3>
+        
+        <div>
 
+        </div>
 
         <hr className="my-8 border-gray-300" />
 
