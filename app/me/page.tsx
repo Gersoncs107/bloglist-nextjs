@@ -28,7 +28,17 @@ const MePage = async () => {
         <h3 className="text-2xl font-bold">Reading List</h3>
         
         <div>
-
+          {user.readingList.length > 0 ? (
+            <ul className="mt-4 list-disc pl-5">
+              {user.readingList.map((blog) => (
+                <li key={blog.id} className="text-lg">
+                  {blog.title}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-gray-600">Your reading list is empty.</p>
+          )}
         </div>
 
         <hr className="my-8 border-gray-300" />
