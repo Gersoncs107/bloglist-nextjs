@@ -11,6 +11,10 @@ const MePage = async () => {
     redirect("/login")
   }
 
+  const readingList = "readingList" in user && Array.isArray(user.readingList)
+    ? user.readingList
+    : []
+
   return (
     <div className="max-w-2xl mx-auto p-6">
       <div className="rounded-lg border border-gray-200 bg-white p-8 text-gray-900 shadow-sm">
@@ -28,9 +32,9 @@ const MePage = async () => {
         <h3 className="text-2xl font-bold">Reading List</h3>
         
         <div>
-          {user.readingList.length > 0 ? (
+          {readingList.length > 0 ? (
             <ul className="mt-4 list-disc pl-5">
-              {user.readingList.map((blog) => (
+              {readingList.map((blog) => (
                 <li key={blog.id} className="text-lg">
                   {blog.title}
                 </li>
