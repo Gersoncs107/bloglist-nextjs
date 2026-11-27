@@ -15,6 +15,10 @@ const BlogPage = async ({ params }: { params: Promise<{ id: string }> }) => {
     notFound()
   }
 
+  const user = await getCurrentUser()
+  const isOwner = user?.id === blog.userId
+  const inReadingList = user ? await isInReadingList(user.id, blog.id) : false
+
   const isWebUrl = /^https?:\/\//i.test(blog.url)
 
   return (
