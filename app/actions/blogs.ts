@@ -2,7 +2,8 @@
 
 import { redirect } from "next/navigation"
 import { revalidatePath } from "next/cache"
-import { addBlog, addLikes } from "../services/blogs"
+import { addBlog, addLikes, getBlogById  } from "../services/blogs"
+import { getCurrentUser } from "../services/session"
 import { auth } from "@/auth"
 
 export type CreateBlogState = {
