@@ -1,4 +1,6 @@
 import Link from "next/link"
+import { getCurrentUser } from "@/app/services/session"
+import { isInReadingList } from "@/app/services/readinglists"
 import { notFound } from "next/navigation"
 import { getBlogById } from "@/app/services/blogs"
 import { addBlogLikes, addToReadingList } from "@/app/actions/blogs"
