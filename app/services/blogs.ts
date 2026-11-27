@@ -10,12 +10,17 @@ export const getAllBlogs = async () => {
 }
 
 export const addBlog = async (blog: { title: string; author: string; url: string; likes: number }) => {
-   const user = await getCurrentUser()
+  const user = await getCurrentUser()
   if (!user) {
     throw new Error("Not logged in")
   }
 
-  await db.insert(blogs).values({ ...blog, userId: user.id });
+  const [created] = await db
+    .insert(blogs)
+    .values({ ...blog, userId: user.id })
+    .returning({ id: blogs.id })
+
+  await addBlogToReadingList(user.id, created.id)
 }
 
 export const getBlogById = async (id: number) => {
