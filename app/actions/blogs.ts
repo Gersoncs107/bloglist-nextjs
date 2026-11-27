@@ -53,8 +53,33 @@ export const addBlogLikes = async (formData: FormData) => {
 }
 
 export const addToReadingList = async (formData: FormData) => {
-  const id = Number(formData.get("id"))
-  // Implement the logic to add the blog to the reading list
-  revalidatePath(`/blogs/${id}`)
-  revalidatePath("/blogs")
+  const user = await getCurrentUser()
+  if (!user) {
+    redirect("/login")
+  }
+
+  const blogId = Number(formData.get("id"))
+  if (!Number.isInteger(blogId)) return
+
+  const blog = await getBlogById(blogId)
+  if (!blog) return
+
+  await addBlogToReadingList(user.id, blogId)
+
+  revalidatePath(`/blogs/${blogId}`)
+  revalidatePath("/me")
+}
+
+export const markAsRead = async (formData: FormData) => {
+  const user = await getCurrentUser()
+  if (!user) {
+    redirect("/login")
+  }
+
+  const itemId = Number(formData.get("id"))
+  if (!Number.isInteger(itemId)) return
+
+  await markReadingListItemAsRead(user.id, itemId)
+
+  revalidatePath("/me")
 }
