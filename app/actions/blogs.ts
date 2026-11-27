@@ -4,6 +4,7 @@ import { redirect } from "next/navigation"
 import { revalidatePath } from "next/cache"
 import { addBlog, addLikes, getBlogById  } from "../services/blogs"
 import { getCurrentUser } from "../services/session"
+import { addBlogToReadingList, markReadingListItemAsRead } from "../services/readinglists"
 import { auth } from "@/auth"
 
 export type CreateBlogState = {
