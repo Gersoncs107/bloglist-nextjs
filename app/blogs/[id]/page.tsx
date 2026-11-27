@@ -61,17 +61,23 @@ const BlogPage = async ({ params }: { params: Promise<{ id: string }> }) => {
             </button>
           </form>
 
-          <form action={addToReadingList}>
-            <input type="hidden" name="id" value={blog.id} />
-            <button
-              type="submit"
-              className="cursor-pointer rounded bg-green-600 px-4 py-2 text-white hover:bg-green-700"
-            >
-              Add to Reading List
-            </button>
-          </form>
-      </div>
-      </article>
+          {user && !isOwner && !inReadingList && (
+            <form action={addToReadingList}>
+              <input type="hidden" name="id" value={blog.id} />
+              <button
+                type="submit"
+                className="cursor-pointer rounded bg-green-600 px-4 py-2 text-white hover:bg-green-700"
+              >
+                Add to Reading List
+              </button>
+            </form>
+          )}
+
+          {user && !isOwner && inReadingList && (
+            <span className="text-sm text-gray-500">✓ In your reading list</span>
+          )}
+          </div>
+         </article>
     </div>
   )
 }
