@@ -81,4 +81,5 @@ const BlogPage = async ({ params }: { params: Promise<{ id: string }> }) => {
     </div>
   )
 }
+
 export default BlogPage
