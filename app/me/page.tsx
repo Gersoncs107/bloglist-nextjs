@@ -112,4 +112,4 @@ const MePage = async () => {
   )
 }
 
-export default MePage 
+export default MePage
